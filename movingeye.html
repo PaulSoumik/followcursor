@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width ; initial-scale=1.0 ; maximum-scale=1.0; user-scalable=0;">
+  <title>UTPFgo</title>
+  
+  
+  
+      <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Yatra+One" >
+    <link href='https://fonts.googleapis.com/css?family=Allerta Stencil' rel='stylesheet'>
+    <link rel="stylesheet" href="aos.css">
+  
+</head>
+
+<body>
+<div class="back">
+  <section class="stage">
+      <figure class="ball">
+        <span class="shadow"></span>
+        <span class="iris"></span>
+      </figure>
+</section>
+   
+  </div>
+
+<section>   
+    <div id="slider">
+        <div class="slide active">
+        <h1 data-aos="fade-right" data-aos-duration="100">HELLO!</h1> <span><font data-aos="fade-right"
+     data-aos-duration="500">I'm</font></span> <p id="truit" > and <font>YOU</font> are in my</p> <h2 class="eyetext">EYE!</h2> 
+        </div>
+    
+        <div class="slide">
+            <div class="righthand"><h2>Web designing</h2> ,is more a <span>ART</span> <p> than only <font>coding!</font>  </p>
+            <div class="spanish"> AND <p>soy aficionado al arte</p>  <div class="translate">Translate?</div></div>
+            <div class="clickactive">Thats not my job! google it! -_-</div>
+            </div>
+          <div class="lefthand"></div>
+        </div>
+        <div class="slide">
+          <h2>How was your day?</h2> <p class="hardone">A hard one?</p> <p class="goodone">or a good one!</p>
+            <div class="anshard">Don't worry , if you are not already <a>#Dead</a> , good days are about to come!</div>
+             <div class="ansgood">You should give your friends a treat!</div>
+          </div>
+        
+
+    
+    </div>
+    <p id="left-arrow"> prev< </p>
+    <p id="right-arrow"> next> </p>
+    </section>   
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    
+  <script>
+    
+    $(window).mousemove(function(e){
+    var change;
+    var xpos=e.clientX;var ypos=e.clientY;
+    var xpos=xpos; 
+    var ypos=ypos;
+    var M = window.matchMedia("(max-width: 700px)")
+    var N = window.matchMedia("(max-width: 800px)")
+    var K = window.matchMedia("(max-width: 1080px)")
+    if (M.matches){
+    $('.iris').css('top',(((ypos/18-22))+"%"));
+    $('.iris').css('left',(((xpos/14-13))+"%"));
+    $('.ball').css('top',(((ypos/25))+"%"));
+    $('.ball').css('left',(((xpos/39))+"%")); 
+    }
+   else if(N.matches){
+    $('.iris').css('top',(((ypos/30-26))+"%"));
+    $('.iris').css('left',(((xpos/18-19))+"%"));
+    $('.ball').css('top',(((ypos/25))+"%"));
+    $('.ball').css('left',(((xpos/39))+"%"));  
+        }
+    else if(K.matches){
+    $('.iris').css('top',(((ypos/40-15))+"%"));
+    $('.iris').css('left',(((xpos/28-18))+"%"));
+    $('.ball').css('top',(((ypos/25))+"%"));
+    $('.ball').css('left',(((xpos/39))+"%"));  
+        }
+     else{  
+    $('.iris').css('top',(((ypos/28)-18)+"%"));
+    $('.iris').css('left',(((xpos/50)-23)+"%"));
+    $('.ball').css('top',(((ypos/25)-15)+"%"));
+    $('.ball').css('left',(((xpos/39)-25)+"%"));}
+                   
+  });
+    
+    
+    </script>
+    
+    
+    
+    
+      <script>
+      $('#right-arrow').click(function(){
+         var currentSlide = $('.slide.active');
+          var nextSlide = currentSlide.next();
+          
+           
+          currentSlide.fadeOut(300).removeClass('active');
+         
+          nextSlide.fadeIn(300).addClass('active');
+       
+          if(nextSlide.length == 0){
+              $('.slide').first().fadeIn(300).addClass('active');
+          }
+          
+          
+          
+          
+      });
+       $('#left-arrow').click(function(){
+         var currentSlide = $('.slide.active');
+          var prevSlide = currentSlide.prev();
+          
+          
+          currentSlide.fadeOut(300).removeClass('active');
+          prevSlide.fadeIn(300).addClass('active');
+          if(prevSlide.length == 0){
+              $('.slide').last().fadeIn(300).addClass('active');
+          }
+          
+          
+          
+          
+      });
+      
+      
+      
+      </script>
+    <script>
+    
+     $('.translate').click(function(){ 
+     
+    
+      $('.clickactive').css('opacity',(1));
+         setTimeout(function(){$('.clickactive').css('opacity',(0));},4000);
+     
+     });
+    
+    
+    </script>
+    <script>
+       $('.hardone').click(function(){ 
+     
+    
+      $('.anshard').css('opacity',(1));
+         $('.ansgood').css('opacity',(0)); 
+     
+       });</script>
+        <script>
+        $('.goodone').click(function(){ 
+     
+   $('.anshard').css('opacity',(0));
+         $('.ansgood').css('opacity',(1)); 
+     
+     
+     });
+    </script>
+    
+    <script src="aos.js"></script>
+<script type="text/javascript">
+	AOS.init({
+duration: 2000,
+});</script>
+
+</body>
+
+</html>
